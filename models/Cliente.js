@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const clienteSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   whatsapp: { type: String },
+  observacoes: { type: String },
   medidas: {
     busto: Number,
     cintura: Number,
