@@ -11,6 +11,15 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const cliente = await Cliente.findById(req.params.id);
+    res.json(cliente);
+  } catch (e) {
+    res.status(500).json({ erro: 'Erro ao buscar cliente' });
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const cliente = new Cliente(req.body);
@@ -36,15 +45,6 @@ router.delete('/:id', async (req, res) => {
     res.json({ mensagem: 'Cliente removido' });
   } catch (e) {
     res.status(400).json({ erro: 'Erro ao remover cliente' });
-  }
-});
-
-router.get('/:id', async (req, res) => {
-  try {
-    const cliente = await Cliente.findById(req.params.id);
-    res.json(cliente);
-  } catch (e) {
-    res.status(500).json({ erro: 'Erro ao buscar cliente' });
   }
 });
 

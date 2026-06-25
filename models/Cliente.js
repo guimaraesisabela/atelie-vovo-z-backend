@@ -6,25 +6,11 @@ const clienteSchema = new mongoose.Schema({
   observacoes: { type: String },
   medidas: {
     busto: Number,
-    torax: Number,
-    ombroAOmbro: Number,
-    larguraCostas: Number,
-    comprimentoOmbroBusto: Number,
-    alturaBusto: Number,
-    distanciaBustos: Number,
-    comprimentoBlusa: Number,
-    circunferenciaBraco: Number,
-    manga: Number,
     cintura: Number,
     quadril: Number,
     comprimento: Number,
     ombro: Number,
-    cinturaSaia: Number,
-    ganchoDianteiro: Number,
-    ganchoTraseiro: Number,
-    coxa: Number,
-    barraCalca: Number,
-    comprimentoCalca: Number,
+    manga: Number,
   }
 }, { timestamps: true });
 
