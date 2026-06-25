@@ -39,4 +39,13 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const cliente = await Cliente.findById(req.params.id);
+    res.json(cliente);
+  } catch (e) {
+    res.status(500).json({ erro: 'Erro ao buscar cliente' });
+  }
+});
+
 module.exports = router;
